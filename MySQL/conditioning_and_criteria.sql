@@ -1,0 +1,32 @@
+create database passengers_data;
+use passengers_data;
+select * from titanic;
+select name,sex,survived from titanic where sex = "male";
+select name,age,sex from titanic where survived = 1;
+select name from titanic where name like "Al%";
+select name from titanic where name like "__Ca%";
+select name from titanic where name not like "Al";
+select name from titanic where age in (22,23,24);
+select distinct sex from titanic;
+select name from titanic where pclass > 1; 
+select age from titanic where pclass <> 3 limit 7;
+select name,age from titanic where age = 22 and pclass = 1;
+select name,age from titanic where age = 22 or age = 24; 
+select name,age from titanic where age between 30 and 35;
+select name from titanic where (pclass > 1 or survived = 1) and (sex = "male" and age > 35);
+select name from titanic where cabin is null;
+select count(cabin) from titanic;
+select count(*) from titanic;
+select sum(survived) from titanic;
+select min(age) from titanic;
+select max(age) from titanic;
+select avg(sex="male") from titanic;
+select (4+3);
+select (2/3);
+select round((2/3),2);
+select(5656565/73);
+select round((5656565/73),0);
+select round((5656565/73),-2);
+select round(avg(fare),2) from titanic where survived = 1;
+
+
